@@ -75,7 +75,9 @@ public class Pin : MonoBehaviour
 
     private IEnumerator LoadNextScene()
     {
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextIndex = (currentIndex == 1) ? currentIndex + 1 : 0;
         yield return null; // صبر برای پایان فریم جاری
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(nextIndex);
     }
 }

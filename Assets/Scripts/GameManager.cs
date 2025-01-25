@@ -62,12 +62,12 @@ public class GameManager : MonoBehaviour
             ball.transform.Translate(Vector3.left * Time.deltaTime);
         }
 
-        if (ball.transform.position.x > 0.5f)
+        if (ball.transform.position.x > 1.5f)
         {
             isGoingRight = false;
         }
 
-        if (ball.transform.position.x < -0.5f)
+        if (ball.transform.position.x < -1.5f)
         {
             isGoingRight = true;
         }
