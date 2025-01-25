@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,8 +10,10 @@ public class GameManager : MonoBehaviour
     // manage the turns 
 
     public GameObject ball;
+    public TextMeshProUGUI scoreUI;
     GameObject[] pins;
     int score = 0; 
+
 
     void Start()
     {
@@ -39,12 +43,14 @@ public class GameManager : MonoBehaviour
     {
         for(int i=0; i < pins.Length; i++ )
         {
-            if ( pins[i].transform.eulerAngles.z > 5 && pins[i].transform.eulerAngles.z < 355 )
+            if ( pins[i].transform.eulerAngles.z > 5 && 
+            pins[i].transform.eulerAngles.z < 355 &&
+            pins[i].activeSelf )
             {
                 score++;
-                
+                pins[i].SetActive(false);
             }
         }
-        Debug.Log(score);
+        scoreUI.text = score.ToString();
     }
 }
