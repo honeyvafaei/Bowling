@@ -2065,7 +2065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1597289073}
   offset: {x: 0, y: 5, z: -7}
-  smoothSpeed: 100
+  smoothSpeed: 10
 --- !u!1001 &1081620131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3065,12 +3065,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d2938098eb8d3754fb62c38608e4134b, type: 3}
+  m_Resource: {fileID: 8300000, guid: d2938098eb8d3754fb62c38608e4134b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
