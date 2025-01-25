@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject ball;
     public TextMeshProUGUI scoreUI;
+    int turncounter = 0 ; 
     GameObject[] pins;
     int score = 0; 
+
+    Vector3[] positions;
 
 
     void Start()
@@ -27,14 +30,15 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) || ball.transform.position.y < 20 )
         {
             CountPinsDown();
+            turncounter++;
         }
     }
 
     void MoveBall()
     {
         Vector3 position = ball.transform.position;
-        position+= Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime;
-        position.x=Mathf.Clamp(position.x , 900 , 1400 );
+        position += Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime * 100 ;
+        position.x=Mathf.Clamp(position.x , 750 , 1100 );
         ball.transform.position = position; 
         //ball.transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime);
     }
