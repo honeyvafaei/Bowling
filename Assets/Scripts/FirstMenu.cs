@@ -4,13 +4,13 @@ using UnityEngine.SceneManagement;
 public class FirstMenu : MonoBehaviour
 {
 
-    public void GameStart()
+    public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 
-    public void GameQuit()
+    public void QuitGame()
     {
         Application.Quit();
     }

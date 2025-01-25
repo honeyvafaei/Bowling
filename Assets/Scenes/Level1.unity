@@ -282,7 +282,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountedPin: 0
-  fallenPins: 0
   ball: {fileID: 1597289070}
   Menu: {fileID: 1437979815}
 --- !u!1 &231742656
@@ -516,7 +515,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountedPin: 0
-  fallenPins: 0
   ball: {fileID: 1597289070}
   Menu: {fileID: 1437979815}
 --- !u!1 &325884076
@@ -968,7 +966,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountedPin: 0
-  fallenPins: 0
   ball: {fileID: 1597289070}
   Menu: {fileID: 1437979815}
 --- !u!1001 &608980887
@@ -1134,7 +1131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountedPin: 0
-  fallenPins: 0
   ball: {fileID: 1597289070}
   Menu: {fileID: 1437979815}
 --- !u!1 &676667803
@@ -1219,7 +1215,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 676667806}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1437979821}
+        m_TargetAssemblyTypeName: inGame_Menu, Assembly-CSharp
+        m_MethodName: BackToGameMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &676667806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,7 +1526,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountedPin: 0
-  fallenPins: 0
   ball: {fileID: 1597289070}
   Menu: {fileID: 1437979815}
 --- !u!1 &825098916
@@ -1820,7 +1827,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountedPin: 0
-  fallenPins: 0
   ball: {fileID: 1597289070}
   Menu: {fileID: 1437979815}
 --- !u!1 &959464823
@@ -2207,7 +2213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountedPin: 0
-  fallenPins: 0
   ball: {fileID: 1597289070}
   Menu: {fileID: 1437979815}
 --- !u!1 &1117688819
@@ -2428,7 +2433,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1246099661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1437979821}
+        m_TargetAssemblyTypeName: inGame_Menu, Assembly-CSharp
+        m_MethodName: GameReStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1246099661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,7 +2647,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountedPin: 0
-  fallenPins: 0
   ball: {fileID: 1597289070}
   Menu: {fileID: 1437979815}
 --- !u!1 &1292410523
@@ -2874,7 +2890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountedPin: 0
-  fallenPins: 0
   ball: {fileID: 1597289070}
   Menu: {fileID: 1437979815}
 --- !u!1 &1437979815
@@ -2993,6 +3008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6ff524be1f07b499aa9551d5348ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Menu: {fileID: 0}
 --- !u!114 &1437979821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3005,6 +3021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6ff524be1f07b499aa9551d5348ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Menu: {fileID: 1437979815}
 --- !u!1001 &1597289069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3019,15 +3036,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2dceb0d69107fb4bb5166972b102801, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2dceb0d69107fb4bb5166972b102801, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2dceb0d69107fb4bb5166972b102801, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2dceb0d69107fb4bb5166972b102801, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3316,7 +3333,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CountedPin: 0
-  fallenPins: 0
   ball: {fileID: 1597289070}
   Menu: {fileID: 1437979815}
 --- !u!1001 &1860957959
