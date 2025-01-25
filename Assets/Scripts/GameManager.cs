@@ -1,60 +1,77 @@
-using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-
-    // move the ball 
-    // manage the score 
-    // manage the turns 
-
     public GameObject ball;
-    public TextMeshProUGUI scoreUI;
-    int turncounter = 0 ; 
+
+    Rigidbody rb;
+    public AudioSource ballAudio;
+    /*------*/
+    [SerializeField] TextMeshProUGUI scoreUI;
+    int turnCounter = 0;
     GameObject[] pins;
-    int score = 0; 
+    int score = 0;
+    Vector3[] initialPositions; // ذخیره مکان اولیه پین‌ها
+    //--------------------------
 
-    Vector3[] positions;
+    [SerializeField] float force;
 
+    bool isShooting = false;
+    bool isGoingRight = true;
 
     void Start()
     {
-        pins = GameObject.FindGameObjectsWithTag("Pin");
+        rb = ball.GetComponent<Rigidbody>();
+        rb.maxAngularVelocity = 50;
+
     }
 
     void Update()
     {
-        MoveBall();
-
-        if(Input.GetKeyDown(KeyCode.Space) || ball.transform.position.y < 20 )
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            CountPinsDown();
-            turncounter++;
+            rb.AddForce(Vector3.forward * force);
+            ballAudio.Play();
+            isShooting = true;
+        }
+
+        if (Input.GetKey(KeyCode.Return))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (!isShooting)
+        {
+            MoveBall();
         }
     }
 
     void MoveBall()
     {
-        Vector3 position = ball.transform.position;
-        position += Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime * 100 ;
-        position.x=Mathf.Clamp(position.x , 750 , 1100 );
-        ball.transform.position = position; 
-        //ball.transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * Time.deltaTime);
+        if (isGoingRight)
+        {
+            ball.transform.Translate(Vector3.right * Time.deltaTime);
+        }
+        else
+        {
+            ball.transform.Translate(Vector3.left * Time.deltaTime);
+        }
+
+        if (ball.transform.position.x > 0.5f)
+        {
+            isGoingRight = false;
+        }
+
+        if (ball.transform.position.x < -0.5f)
+        {
+            isGoingRight = true;
+        }
     }
 
-    void CountPinsDown()
-    {
-        for(int i=0; i < pins.Length; i++ )
-        {
-            if ( pins[i].transform.eulerAngles.z > 5 && 
-            pins[i].transform.eulerAngles.z < 355 &&
-            pins[i].activeSelf )
-            {
-                score++;
-                pins[i].SetActive(false);
-            }
-        }
-        scoreUI.text = score.ToString();
-    }
+
 }
